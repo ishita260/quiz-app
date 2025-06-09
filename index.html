@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Quiz Header -->
+        <div class="quiz-header">
+            <h1>Quiz Time BEGINS!!!</h1>
+            <p>Test your programming knowledge!</p>
+        </div>
+
+        <!-- Timer and Progress -->
+        <div class="timer-container">
+            <div class="question-counter">
+                Question <span id="currentQuestion">1</span> of <span id="totalQuestions">15</span>
+            </div>
+            <div class="timer">
+                Time: <span id="timeLeft">10:00</span>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div id="quizContent">
+            <div class="question-container">
+                <div class="question" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">← Previous</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+                <button class="btn btn-success" id="finishBtn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+            </div>
+        </div>
+
+        <!-- Result Container -->
+        <div class="result-container" id="resultContainer">
+            <h2>Quiz Complete!</h2>
+            <div class="score-circle" id="scoreCircle">
+                <span id="scoreText"></span>
+            </div>
+            <div class="feedback" id="feedbackText"></div>
+            <div style="margin: 20px 0;">
+                <p>You answered <span id="correctAnswers"></span> out of <span id="totalAnswered"></span> questions correctly.</p>
+            </div>
+            <button class="btn btn-primary pulse" onclick="retakeQuiz()">Retake Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
